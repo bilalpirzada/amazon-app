@@ -1,4 +1,6 @@
 import 'package:amazon_app/constants/global_variables.dart';
+import 'package:amazon_app/features/auth/screens/auth_screen.dart';
+import 'package:amazon_app/router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,22 +24,8 @@ class MyApp extends StatelessWidget {
           iconTheme: IconThemeData(color: Colors.black),
         ),
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Hello"),
-        ),
-        body: Column(
-          children: [
-            const Center(
-              child: Text('Flutter Demo Home Page'),
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text("Click this"),
-            ),
-          ],
-        ),
-      ),
+      onGenerateRoute: (settings) => generateRoute(settings),
+      home: AuthScreen(),
     );
   }
 }
